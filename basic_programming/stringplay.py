@@ -21,11 +21,36 @@ class playstringarena:
             print("String is palindrome")
         else:
             print ("String is not palindrome")
+
+    def removeConsecutiveDuplicates(self):
+        base_string = self.input_str
+        lenght_of_string = len(base_string)
+        if lenght_of_string < 2:
+            print (f"Output string is {base_string}")
+        if base_string[0] != base_string[1]:
+            print (f"Output string is {base_string}")
+        mystrlist = []
+        i = 0
+        while lenght_of_string > 0: # 4  Moon
+        # for i in range(lenght_of_string):
+            if base_string[lenght_of_string-1] == base_string[lenght_of_string-2]:
+                mystrlist.append(base_string[lenght_of_string - 2])
+            else:
+                mystrlist.append(base_string[lenght_of_string -1])
+            lenght_of_string = len(base_string[:lenght_of_string - 1])
+        print (f"MY list is {(mystrlist)}")
+        # print(base_string[1:])
+        # # return removeConsecutiveDuplicates(base_string[1:])
+        
+
+
+
     
     
 # my_input = "Great Country is India"
 rev_string = "Moon"
 # a = playstringarena(my_input)
 b = playstringarena(rev_string)
-b.string_palindrome()
+# b.string_palindrome()
+b.removeConsecutiveDuplicates()
 # a.find_dup_char()
